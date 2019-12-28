@@ -23,6 +23,7 @@
     "gatsby-source-filesystem": "^2.1.40",
     "gatsby-transformer-remark": "^2.6.39",
     "gatsby-transformer-sharp": "^2.3.7",
+    "now": "^16.7.0",
     "prismjs": "^1.17.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -49,15 +50,14 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby build && yarn build-storybook -o public/demos -s demos/",
     "develop": "gatsby develop -p 3333",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy": "yarn build && gatsby-plugin-s3 deploy",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "deploy": "yarn build && now --prod",
+    "storybook": "start-storybook -p 6006 -s demos"
   },
   "husky": {
     "hooks": {
