@@ -6,7 +6,7 @@ tags: ['CSS', 'React', 'Javascript']
 ---
 
 I usually prefer unintrusive feedback to actions, such as a form submission, rather than throwing
-up a full-page loading spinner. One useful pattern is replacing a button's text with an animated spinner. 
+up a full-page loading spinner. One useful pattern is replacing a button's text with an animated spinner.
 
 ## Starting with our Button and Spinner components
 
@@ -32,7 +32,7 @@ const StyledButton = styled.button`
   }
 `;
 
-const Button = (props) => <StyledButton {...props} />; // we'll need this later!
+const Button = props => <StyledButton {...props} />; // we'll need this later!
 ```
 
 We also need a spinner. Here's one adapted from [loading.io](https://loading.io/css/)
@@ -80,7 +80,7 @@ const StyledSpinner = styled.div`
 
 const Spinner = ({ color = 'white', size = 18 }) => (
   <StyledSpinner role="img" aria-label="Loading" color={color} size={size}>
-    <div /> 
+    <div />
     <div />
     <div />
     <div />
@@ -103,11 +103,11 @@ well, [pretty terrible](/demos/?path=/story/buttons-in-spinners--naive-button-wi
 
 Let's use some tricks:
 
-* Use absolute positioning to remove the Spinner from the Button's layout flow 
-* Use `visibility: hidden` on the button's text to hide it but keep it in the layout 
-* Flex for centering the spinner
+- Use absolute positioning to remove the Spinner from the Button's layout flow
+- Use `visibility: hidden` on the button's text to hide it but keep it in the layout
+- Flex for centering the spinner
 
-```javascript 
+```javascript
 const StyledSpinnerContainer = styled.span`
   position: relative;
 

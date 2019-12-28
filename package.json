@@ -52,7 +52,7 @@
   "scripts": {
     "build": "gatsby build && yarn build-storybook -o public/demos -s demos/",
     "develop": "gatsby develop -p 3333",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "format": "prettier --write \"**/*.{js,jsx,json,md,css}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
@@ -65,7 +65,7 @@
     }
   },
   "lint-staged": {
-    "{gatsby-*.js,src/**/*.{js,jsx,json,css}}": [
+    "{gatsby-*.js,src/**/*.{js,jsx,json,md,css}}": [
       "yarn format",
       "git add"
     ]
