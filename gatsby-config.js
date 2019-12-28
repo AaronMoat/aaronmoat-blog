@@ -1,3 +1,11 @@
+require('dotenv').config();
+
+const gaId = process.env.GA_ID;
+
+if (!gaId) {
+  throw new Error('Error! Missing GA_ID');
+}
+
 module.exports = {
   siteMetadata: {
     title: `Aaron Moat`,
@@ -59,18 +67,18 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: gaId,
       },
     },
     `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Aaron Moat`,
+        short_name: `Aaron Moat`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#5381ed`,
         display: `minimal-ui`,
         icon: `content/assets/icon.png`,
       },

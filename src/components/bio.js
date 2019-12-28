@@ -24,15 +24,12 @@ const Bio = () => {
       site {
         siteMetadata {
           author
-          social {
-            github
-          }
         }
       }
     }
   `);
 
-  const { author, social } = data.site.siteMetadata;
+  const { author } = data.site.siteMetadata;
   return (
     <div
       style={{
@@ -56,8 +53,6 @@ const Bio = () => {
       />
       <p style={{ marginBottom: 0 }}>
         <strong>{author}</strong> is a web developer from Melbourne.
-        {` `}
-        View him on <a href={`https://github.com/${social.github}`}>Github</a>.
       </p>
     </div>
   );

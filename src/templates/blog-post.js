@@ -46,7 +46,7 @@ class BlogPostTemplate extends React.Component {
               marginBottom: rhythm(1),
             }}
           />
-          <footer>
+          <section>
             <p>
               Tags:{' '}
               {post.frontmatter.tags.map((tag, i, tags) => (
@@ -56,7 +56,7 @@ class BlogPostTemplate extends React.Component {
               ))}
             </p>
             <Bio />
-          </footer>
+          </section>
         </article>
 
         <nav>

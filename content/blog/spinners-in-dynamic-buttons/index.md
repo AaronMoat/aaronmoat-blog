@@ -12,7 +12,7 @@ up a full-page loading spinner. One useful pattern is replacing a button's text 
 
 Here's our starting point - a basic button in [React](https://reactjs.org/) using [styled-components](https://www.styled-components.com/):
 
-```javascript
+```js
 const StyledButton = styled.button`
   display: inline-block;
   padding: 1rem 1.5rem;
@@ -37,7 +37,7 @@ const Button = props => <StyledButton {...props} />; // we'll need this later!
 
 We also need a spinner. Here's one adapted from [loading.io](https://loading.io/css/)
 
-```javascript
+```js
 const StyledSpinner = styled.div`
   display: inline-block;
   position: relative;
@@ -92,14 +92,14 @@ const Spinner = ({ color = 'white', size = 18 }) => (
 
 The first instinct would be to just replace the button content with the spinner:
 
-```javascript
+```js
 const Button = ({ isLoading, children, ...rest }) => (
   <StyledButton {...rest}>{isLoading ? <Spinner /> : children}</StyledButton>
 );
 ```
 
 However, the spinner and the removal of the text causes the button to change shape, which looks,
-well, [pretty terrible](/demos/?path=/story/buttons-in-spinners--naive-button-with-spinner).
+well, [pretty terrible](https://aaronmoat.com/demos/?path=/story/buttons-in-spinners--naive-button-with-spinner).
 
 Let's use some tricks:
 
@@ -107,7 +107,7 @@ Let's use some tricks:
 - Use `visibility: hidden` on the button's text to hide it but keep it in the layout
 - Flex for centering the spinner
 
-```javascript
+```js
 const StyledSpinnerContainer = styled.span`
   position: relative;
 
@@ -147,4 +147,4 @@ const Button = ({ isLoading, children, ...rest }) => (
 );
 ```
 
-See a [demo](/demos/?path=/story/buttons-in-spinners--button-with-spinner), or get [the full source code](https://github.com/AaronMoat/aaronmoat-blog/tree/master/stories/ButtonSpinners/final.jsx).
+See a [demo](https://aaronmoat.com/demos/?path=/story/buttons-in-spinners--button-with-spinner), or get [the full source code](https://github.com/AaronMoat/aaronmoat-blog/tree/master/stories/ButtonSpinners/final.jsx).
