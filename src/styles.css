@@ -160,3 +160,8 @@ pre[data-line] {
   float: left;
   min-width: 100%;
 }
+
+article ol li {
+  list-style-position: outside;
+  margin-left: 2ex;
+}
