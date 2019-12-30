@@ -1,3 +1,8 @@
 {
-  "redirects": [{ "source": "/demos", "destination": "/demos/" }]
+  "redirects": [{ "source": "/demos", "destination": "/demos/" }],
+  "build": {
+    "env": {
+      "GA_ID": "@ga_id"
+    }
+  }
 }
