@@ -134,7 +134,7 @@ renderSymbol(attrs) {
 }
 ```
 
-We'll stick to square icons, so let's rename `barWidth` to `scaleFactor. Then, we can calculate the icon size:
+We'll stick to square icons, so let's rename `barWidth` to `scaleFactor`. Then, we can calculate the icon size:
 
 ```js
 const heightPerIcon = Math.abs(valueFunctor({ y: 1 }) - value0Functor({}));
