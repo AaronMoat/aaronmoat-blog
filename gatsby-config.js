@@ -12,9 +12,6 @@ module.exports = {
     author: `Aaron Moat`,
     description: `Aaron Moat's blog`,
     siteUrl: `https://aaronmoat.com`,
-    social: {
-      github: `AaronMoat`,
-    },
   },
   plugins: [
     {
@@ -91,5 +88,6 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    'gatsby-plugin-sitemap',
   ],
 };

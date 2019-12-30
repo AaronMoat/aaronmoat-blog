@@ -81,6 +81,14 @@ class Layout extends React.Component {
           >
             GitHub
           </a>
+          {' | '}
+          <a
+            href="https://www.linkedin.com/in/aaron-moat-393580110/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
         </footer>
       </div>
     );
