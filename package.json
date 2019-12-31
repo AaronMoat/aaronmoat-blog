@@ -61,8 +61,6 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy": "yarn build && now",
-    "deploy-prod": "yarn build && now --prod",
     "storybook": "start-storybook -p 6006 -s demos"
   },
   "husky": {
