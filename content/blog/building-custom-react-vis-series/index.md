@@ -5,20 +5,20 @@ description: Extending react-vis to build a custom series — an Isotype plot.
 tags: ['React', 'Javascript', 'Graphing', 'react-vis']
 ---
 
-I'm a fan of the React graphing library [react-vis](https://uber.github.io/react-vis/). It's composable, so there's a lot you can do out of the box with minimal code required. 
+I'm a fan of the React graphing library [react-vis](https://uber.github.io/react-vis/). It's composable, so there's a lot you can do out of the box with minimal code required.
 
 If you need more than what's offered by default, there's a couple of options:
 
-1. Use the [CustomSVGSeries](https://uber.github.io/react-vis/documentation/series-reference/custom-svg-series), where you control what's rendered at what coordinates. 
-2. Build a custom series by extending the AbstractSeries component. 
+1. Use the [CustomSVGSeries](https://uber.github.io/react-vis/documentation/series-reference/custom-svg-series), where you control what's rendered at what coordinates.
+2. Build a custom series by extending the AbstractSeries component.
 
 The second option is how all the out-of-the-box series provided by react-vis are made. However, it's not well documented -- by which I mean, there's exactly _one_ [passing reference to it](https://uber.github.io/react-vis/examples/charts/candlestick). However, if you want powerful functionality, but sometimes it's your only option. That's how we'll proceed for the rest of the article, where we build an [Isotype](http://steveharoz.com/research/isotype/) series.
 
 ## The Goal
 
-Let's build an Isotype plot (like a bar chart, but with stacked images). We'll use [Font Awesome](https://fontawesome.com/) for our icons. 
+Let's build an Isotype plot (like a bar chart, but with stacked images). We'll use [Font Awesome](https://fontawesome.com/) for our icons.
 
-## Setting up Our Custom Chart 
+## Setting up Our Custom Chart
 
 Let's start with our component, extending off `AbstractSeries`
 
@@ -124,7 +124,7 @@ Here's where we are:
 
 ## Rendering Columns of Shapes
 
-Instead of rendering a rectangle, we want to render many icons per column. 
+Instead of rendering a rectangle, we want to render many icons per column.
 
 To start, let's set up a function to render symbols, which we'll change later:
 
@@ -167,13 +167,13 @@ data.map((column, i) => {
 
     return this.renderSymbol(attrs);
   });
-})
+});
 ```
 
 A few things to explain:
 
-* We build `y` data-points for each data point. So, for `{ x: 'Cat', y: 11 }`, we build an array of 11 items, from `{ x: 'Cat', y: 1 }` all the way to `{ x: 'Cat', y: 11 }`. 
-* Then, we use the new data points to control `x` and `y` positions, and the prior-calculated `size` for both width and height
+- We build `y` data-points for each data point. So, for `{ x: 'Cat', y: 11 }`, we build an array of 11 items, from `{ x: 'Cat', y: 1 }` all the way to `{ x: 'Cat', y: 11 }`.
+- Then, we use the new data points to control `x` and `y` positions, and the prior-calculated `size` for both width and height
 
 Here's what it looks like:
 
@@ -205,7 +205,7 @@ import { faClock, faCat, faLock } from '@fortawesome/free-solid-svg-icons';
 
 // This can be whatever you like
 
-const getCustomIcon = icon => props => ( 
+const getCustomIcon = icon => props => (
   <FontAwesomeIcon {...props} icon={icon} />
 );
 
@@ -220,11 +220,11 @@ It's looking much better. Here's where we are:
 
 ![isotype](./isotype.png)
 
-## Final Touches: Adding Interaction 
+## Final Touches: Adding Interaction
 
-Let's add some interaction using `onMouseOver` / `onMouseOut` on our columns so we can display tooltips. Keep in mind, we could add whatever functionality we like, because we control the `IsotypeSeries` component. 
+Let's add some interaction using `onMouseOver` / `onMouseOut` on our columns so we can display tooltips. Keep in mind, we could add whatever functionality we like, because we control the `IsotypeSeries` component.
 
-First, we need to wrap all our icons for each `x` value inside a group `<g />`, so we can attach one event listener. 
+First, we need to wrap all our icons for each `x` value inside a group `<g />`, so we can attach one event listener.
 
 Then, to make sure the mouse over stays active for the whole time we're hovering in a column, and doesn't fire the mouse out event when our mouse is in the gaps between each icon, we need an _invisible_ rectangle covering the whole column. Given we started with a bar series, this shouldn't be too hard!
 
@@ -296,7 +296,7 @@ export const Chart = () => {
 };
 ```
 
-Here's the final result: 
+Here's the final result:
 
 ![Highlighting](./highlighting.png)
 
