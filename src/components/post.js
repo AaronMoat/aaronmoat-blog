@@ -1,5 +1,4 @@
 import React from 'react';
-import kebabCase from 'lodash/kebabCase';
 import { Link } from 'gatsby';
 
 import { rhythm } from '../utils/typography';
@@ -19,14 +18,7 @@ const Post = ({ node }) => {
             {title}
           </Link>
         </h3>
-        <small>
-          {node.frontmatter.date} | Tags:{' '}
-          {node.frontmatter.tags.map((tag, i, tags) => (
-            <span key={tag}>
-              <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>{' '}
-            </span>
-          ))}
-        </small>
+        <small>{node.frontmatter.date}</small>
       </header>
       <section>
         <p
