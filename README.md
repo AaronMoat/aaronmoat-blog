@@ -2,10 +2,10 @@
 
 From [gatsby-starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog).
 
-## Deploying
+## View blog posts locally
 
 ```
-yarn deploy
+yarn develop
 ```
 
 ## Running Demos
