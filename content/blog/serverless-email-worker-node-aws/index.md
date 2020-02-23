@@ -1,6 +1,6 @@
 ---
 title: A Simple Serverless Email Worker
-date: '2019-12-30T15:00:00.000Z'
+date: '2020-02-23T18:00:00.000Z'
 description: A tutorial on how to send emails on the cloud, with Node.js + AWS Lambda.
 tags: ['serverless', 'AWS', 'Node.js', 'Javascript', 'email']
 ---
