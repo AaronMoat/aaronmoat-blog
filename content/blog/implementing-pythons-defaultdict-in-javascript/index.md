@@ -78,6 +78,11 @@ And there we have it.
 If you don't love the `.get` syntax, there's another option, though I find
 the implementation a bit less obvious. It uses [Proxy](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy).
 
+Note that `Proxy` cannot be used with IE11, [not even with babel](https://babeljs.io/docs/en/learn#proxies):
+
+> Unsupported feature
+> Due to the limitations of ES5, Proxies cannot be transpiled or polyfilled. See support in various JavaScript engines.
+
 ```js
 module.exports = class DefaultDict extends Object {
   constructor(getDefaultValue, ...objectConstructorArgs) {
