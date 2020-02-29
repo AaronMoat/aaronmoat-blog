@@ -1,6 +1,6 @@
 ---
 title: Building Custom Charts with react-vis
-date: '2019-12-30T15:00:00.000Z'
+date: 2019-12-30
 description: Extending react-vis to build a custom series — an Isotype plot.
 tags: ['React', 'Javascript', 'Graphing', 'react-vis']
 ---

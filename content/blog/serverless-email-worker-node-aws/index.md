@@ -1,6 +1,6 @@
 ---
 title: A Simple Serverless Email Worker
-date: '2020-02-23T18:00:00.000Z'
+date: 2020-02-23
 description: A tutorial on how to send emails on the cloud, with Node.js + AWS Lambda.
 tags: ['serverless', 'AWS', 'Node.js', 'Javascript', 'email']
 ---
@@ -264,7 +264,7 @@ Now we've got a class to do the sending, we'd like to test our templates locally
 
 Then, in the `package.json`, I have:
 
-```
+```json
 "scripts": {
     "generate-sample-emails": "node generateSampleEmails.js"
 },
@@ -318,7 +318,7 @@ Great, we're ready to go. You'll need to set up a verified email or domain in th
 
 Once you're ready, you can use the [SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html) to deploy your email worker! You'll need to make a bucket for the packaged assets, if you haven't used the SAM CLI before.
 
-```sh
+```bash
 sam build
 sam package --s3-bucket <your-packaging-assets-bucket> --s3-prefix serverless-email-worker --output-template-file .aws-sam/packaged.yml
 sam deploy --template-file .aws-sam/packaged.yml --stack-name serverless-email-worker --capabilities CAPABILITY_IAM --parameter-overrides SenderName=<email sender name> SenderEmail=<email@address>

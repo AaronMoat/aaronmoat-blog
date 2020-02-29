@@ -1,6 +1,6 @@
 ---
 title: Loading Spinners Inside Dynamic Buttons
-date: '2019-12-28T15:00:00.000Z'
+date: 2019-12-28
 description: Putting spinners inside buttons without changing the button's size.
 tags: ['CSS', 'React', 'Javascript']
 ---
