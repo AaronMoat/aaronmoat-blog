@@ -81,6 +81,7 @@ the implementation a bit less obvious. It uses [Proxy](https://developer.mozilla
 Note that `Proxy` cannot be used with IE11, [not even with babel](https://babeljs.io/docs/en/learn#proxies):
 
 > Unsupported feature
+>
 > Due to the limitations of ES5, Proxies cannot be transpiled or polyfilled. See support in various JavaScript engines.
 
 ```js
